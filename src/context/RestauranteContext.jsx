@@ -65,4 +65,4 @@ const RestauranteContextProvider = ({ children }) => {
   )
 };
 
-export default PizzasContextProvider;
+export default RestauranteContextProvider;

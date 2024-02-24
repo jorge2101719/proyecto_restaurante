@@ -9,7 +9,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import PizzasNavbar from './components/navbar/Navbar';
-import Home from './views/home/RestauranteHome';
+import RestauranteHome from './views/home/RestauranteHome';
 import PlatoDetalle from './views/detalles/PlatoDetalle';
 import Carrito from './views/carrito/Carrito'
 import Error from './views/pizzaError/Error';

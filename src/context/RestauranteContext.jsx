@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react';
 export const RestauranteContext = createContext({});
 
 const RestauranteContextProvider = ({ children }) => {
-  const [platos, setPlatos] = useState([]); // maneja la petición a pizzas.json
+  const [platos, setPlatos] = useState([]); // maneja la petición a platos.json
   const [carrito, setCarrito] = useState([]); // maneja los estados del carrito
   const [total, setTotal] = useState(0); // da el valor a pagar
   const [contador, setContador] = useState(0);
@@ -11,6 +11,7 @@ const RestauranteContextProvider = ({ children }) => {
   const getPlatos = async () => {
     const response = await fetch("/pizzas.json")
     const data = await response.json()
+    console.log(data)
     setPlatos(data);
   };
 
@@ -19,16 +20,16 @@ const RestauranteContextProvider = ({ children }) => {
   }, []);
 
   const agregarAlCarrito = (plato) => {
-    const existePlato = carrito.find(index => index.id === pizza.id)
+    const existePlato = carrito.find(index => index.id === plato.id)
     if (!existePlato){
-      setCarrito([...carrito, { ...pizza, cantidad: 1 }]);
-      setTotal(() => total + pizza.price);
+      setCarrito([...carrito, { ...plato, cantidad: 1 }]);
+      setTotal(() => total + plato.price);
       setContador(() => contador + 1);
     } else {
       existePlato.cantidad += 1;
       setContador(() => contador + 1)
       setCarrito([...carrito]);
-      setTotal(() => total + pizza.price)
+      setTotal(() => total + plato.price)
     }
   }
 
@@ -59,7 +60,7 @@ const RestauranteContextProvider = ({ children }) => {
   }
 
   return (
-    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPizzas, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
+    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
       {children}
     </RestauranteContext.Provider>
   )

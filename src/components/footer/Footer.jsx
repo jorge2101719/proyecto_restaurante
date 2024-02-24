@@ -1,12 +1,12 @@
 import { useContext } from 'react'
-import { PizzasContext } from '../../context/RestauranteContext';
+import { RestauranteContext } from '../../context/RestauranteContext';
 import Button from 'react-bootstrap/Button'
 
 import Form from "react-bootstrap/Form";
 
 
 const Footer = () => {
-  const { limpiarElCarrito, total, pagar } = useContext(PizzasContext);
+  const { limpiarElCarrito, total, pagar } = useContext(RestauranteContext);
 
   const enviarComentario = () => {
     alert("Gracias por ayudarnos a mejorar");
@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
   <div className="bg-dark text-light p-3">
-    <p className='fs-3 fw-bold'>Pizzería Mamma Mia</p>
+    <p className='fs-3 fw-bold'>Prestorante</p>
     {total > 0 ? (
     <div>
       <p className='fs-5 fw-bold'>El total de su compra es: ${total.toLocaleString('cl-CL')}</p>

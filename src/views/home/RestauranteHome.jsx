@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { PizzasContext } from "../../context/RestauranteContext";
+import { RestauranteContext } from "../../context/RestauranteContext";
 import Cartas from '../../components/cartas/Cartas';
 import Buscando from '../../components/buscando/Buscando';
 
@@ -9,8 +9,8 @@ import Footer from '../../components/footer/Footer';
 
 import './Home.css';
 
-const Home = () => {
-  const { pizzas }  = useContext(PizzasContext);
+const RestauranteHome = () => {
+  const { platos }  = useContext(RestauranteContext);
 
   return (
     <div className="home">
@@ -19,7 +19,7 @@ const Home = () => {
         <p className="fw-bold fs-5">¡La mejor variedad para su paladar!</p>
       </header>
       <section className="cards">
-        { pizzas ? pizzas.map((pizza, index) => <Cartas key={index} pizza={pizza} />) : <Buscando />}
+        { platos ? platos.map((plato, indice) => <Cartas key={ indice } plato={ plato } />) : <Buscando />}
       </section>
       {/* inclusión de Footer */}
       <Footer />
@@ -27,4 +27,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default RestauranteHome

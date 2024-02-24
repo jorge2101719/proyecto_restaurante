@@ -8,16 +8,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Carrito.css'
 
-import { PizzasContext } from '../../context/RestauranteContext';
+import { RestauranteContext } from '../../context/RestauranteContext';
 import { useContext } from 'react';
 
 export default function Carrito() {
-  const { carrito, agregarAlCarrito, quitarDelCarrito, total, contador, limpiarElCarrito, pagar } = useContext(PizzasContext);
+  const { carrito, agregarAlCarrito, quitarDelCarrito, total, contador, limpiarElCarrito, pagar } = useContext(RestauranteContext);
 
-  const navigatePizza = useNavigate()
+  const navigateRestaurante = useNavigate()
 
-  const incrementar = (pizza) => {
-    agregarAlCarrito(pizza);
+  const incrementar = (plato) => {
+    agregarAlCarrito(plato);
   }
 
   const decrementar = (producto) => {
@@ -59,10 +59,10 @@ export default function Carrito() {
         ) : (
           <div>
             <div className='titular-carrito'>
-              <p className='badge text-light text-center fs-1'>Pizzería Mamma Mia</p>
-              <p className='badge text-light text-center fs-5'>¡Tenemos las mejores de la cuidad!</p>
+              <p className='badge text-light text-center fs-1'>Prestorante</p>
+              <p className='badge text-light text-center fs-5'>¡Tenemos lo mejor de la cuidad!</p>
             </div>
-            <p><Button onClick={() => navigatePizza('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
+            <p><Button onClick={() => navigateRestaurante('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
           </div>
         )}
         <hr className='text-primary' />

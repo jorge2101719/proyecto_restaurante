@@ -8,7 +8,7 @@ import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Navbar from './components/navbar/Navbar';
+import RestauranteNavbar from './components/navbar/RestauranteNavbar';
 import RestauranteHome from './views/home/RestauranteHome';
 import PlatoDetalle from './views/detalles/PlatoDetalle';
 import Carrito from './views/carrito/Carrito'
@@ -22,7 +22,7 @@ function App() {
     <div>
       <BrowserRouter>
         <RestauranteContextProvider>
-          <Navbar />
+          <RestauranteNavbar />
 
           <Routes>
             <Route index element={ <RestauranteHome /> } />

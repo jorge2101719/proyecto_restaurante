@@ -5,11 +5,11 @@ import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavbarStyle.css'
 
-import { PizzasContext } from '../../context/RestauranteContext';
+import { RestauranteContext } from '../../context/RestauranteContext';
 import { useContext } from 'react';
 
-const PizzasNavbar = () => {
-  const { total } = useContext(PizzasContext);
+const RestauranteNavbar = () => {
+  const { total } = useContext(RestauranteContext);
 
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-actve");
 
@@ -35,4 +35,4 @@ const PizzasNavbar = () => {
   )
 }
 
-export default PizzasNavbar
+export default RestauranteNavbar

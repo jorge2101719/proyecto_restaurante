@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Carrito.css'
 
-import { PizzasContext } from '../../context/PizzaContext';
+import { PizzasContext } from '../../context/RestauranteContext';
 import { useContext } from 'react';
 
 export default function Carrito() {

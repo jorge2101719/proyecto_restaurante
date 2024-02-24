@@ -2,16 +2,18 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PizzasContextProvider from './context/PizzaContext'
+import PizzasContextProvider from './context/RestauranteContext'
 
 import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import PizzasNavbar from './components/PizzasNavbar/PizzasNavbar';
-import Home from './views/pizzaHome/Home';
-import PizzaDetalle from './views/detalles/PizzaDetalle';
-import Error from '.views/pizzaError/Error';
+import PizzasNavbar from './components/navbar/Navbar';
+import Home from './views/home/RestauranteHome';
+import PlatoDetalle from './views/detalles/PlatoDetalle';
+import Carrito from './views/carrito/Carrito'
+import Error from './views/pizzaError/Error';
+// import Footer from './components/footer/Footer'
 
 
 function App() {
@@ -19,18 +21,19 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <PizzasContextProvider>
+        <RestauranteContextProvider>
           <PizzasNavbar />
 
           <Routes>
-            <Route index element={ <Home /> } />
-            <Route path="/" element={ <Home />} />
-            <Route path="/pizza/:id" element={ <PizzaDetalle /> } />
+            <Route index element={ <RestauranteHome /> } />
+            <Route path="/" element={ <RestauranteHome />} />
+            <Route path="/pizza/:id" element={ <PlatoDetalle /> } />
             <Route path="carrito" element={ <Carrito />} />
+            {/* <Route path='footer' element={ <Footer /> } /> */}
             <Route path="*" element={<Error />} />
           </Routes>
         
-        </PizzasContextProvider>
+        </RestauranteContextProvider>
       </BrowserRouter>
     </div>
   )

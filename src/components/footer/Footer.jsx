@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { PizzasContext } from '../../context/PizzaContext';
+import { PizzasContext } from '../../context/RestauranteContext';
 import Button from 'react-bootstrap/Button'
 
 import Form from "react-bootstrap/Form";

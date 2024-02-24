@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { PizzasContext } from '../../context/PizzaContext';
+import { PizzasContext } from '../../context/RestauranteContext';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
+
 import { RestauranteContext } from '../../context/RestauranteContext';
 
 import Button from 'react-bootstrap/Button';
@@ -7,7 +8,7 @@ import Card from 'react-bootstrap/Card';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Cartas({ plato }) {
+const Cartas = ({ plato }) => {
   const navigateRestaurante = useNavigate();
   const { agregarAlCarrito } = useContext(RestauranteContext);
 

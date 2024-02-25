@@ -15,21 +15,25 @@ const RestauranteNavbar = () => {
 
   return (
     <div>
-      <nav className="d-flex align-items-center justify-content-between p-3 navbar fixed-top bg-warning">
+      <nav className="d-flex align-items-center justify-content-between p-3 navbar fixed-top bg-black">
         <NavLink className={ setActiveClass } to="/">
-          <img src='/icons8-pizza-65.png' style={{width: '2rem'}} />
+          <img src='/icons8-pizza-65.png' style={{ width: '2rem' }} />
           <span>Prestoran</span>
-        </NavLink> 
-        <NavLink className={ setActiveClass } to="/">
+        </NavLink>
+
+        <NavLink className={ setActiveClass } to="/login">
           <span>Login</span>
         </NavLink>
-        <NavLink className={ setActiveClass } to="/">
+
+        <NavLink className={ setActiveClass } to="/registro">
           Registrarse
         </NavLink>
+
         <NavLink className={ setActiveClass } to="/carrito">
           <img src='/carrito-de-compras.png' style={{width: '2rem'}} />
           <span className='totalCompra'> Carrito $ {total.toLocaleString('cl-CL')}</span>
         </NavLink>
+
       </nav>
     </div>
   )

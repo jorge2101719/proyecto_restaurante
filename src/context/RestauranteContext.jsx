@@ -61,7 +61,7 @@ const RestauranteContextProvider = ({ children }) => {
 
   return (
     <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
-      {children}
+      { children }
     </RestauranteContext.Provider>
   )
 };

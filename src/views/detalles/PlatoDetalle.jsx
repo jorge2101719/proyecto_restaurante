@@ -10,54 +10,54 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './detalleDelPlato.css';
 import '../home/RestauranteHome';
 
-const PizzaDetalle = () => {
+const PlatoDetalle = () => {
   const { id } = useParams();
 
-  const navigatePizza = useNavigate();
-  const { pizzas, agregarAlCarrito } = useContext(PizzasContext);
+  const navigateRestaurante = useNavigate();
+  const { platos, agregarAlCarrito } = useContext(RestauranteContext);
 
   useEffect(() => {
-    const encontrarPizza = pizzas.find(pizza => pizza.id === id);
+    const encontrarPlato = platos.find(plato => plato.id === id);
 
-    if(!encontrarPizza) {    
+    if(!encontrarPlato) {    
       return (
-        navigatePizza('/')
+        navigateRestaurante('/')
       )
     }
   }, [id]);
 
-  const pizzaIndex = pizzas.findIndex(e => e.id === id);
+  const platoIndex = platos.findIndex(e => e.id === id);
 
-  const detalleDelPlato = pizzas[pizzaIndex];
+  const detalleDelPlato = platos[platoIndex];
 
   return (
     <div>
       {/* <h1>{encontrarPizza ? <div>El pizza está bien</div> : undefined}</h1> */}
-      {detalleDeLaPizza ? (
+      {detalleDelPlato ? (
         <section className='detalles mt-5 pt-3 bg-primary'>
-          <img src={detalleDeLaPizza.img} style={{width: '100%'}}></img>
+          <img src={detalleDelPlato.img} style={{width: '100%'}}></img>
           <div>
-            <div className='h1'>{detalleDeLaPizza.name.charAt(0).toUpperCase() + detalleDeLaPizza.name.slice(1)}</div>
+            <div className='h1'>{detalleDelPlato.name.charAt(0).toUpperCase() + detalleDelPlato.name.slice(1)}</div>
             <p className='description'>
-              { detalleDeLaPizza.desc }
+              { detalleDelPlato.desc }
             </p>
             <p className='fs-4 fw-bold text-start'>
               Ingredientes:
             </p>
             <ul>
-              { detalleDeLaPizza.ingredients.map( (ingrediente, index) => <li key={index}>{ingrediente}</li> ) }
+              { detalleDelPlato.ingredients.map( (ingrediente, index) => <li key={index}>{ingrediente}</li> ) }
             </ul>
             <section className='d-flex justify-content-around'>
               <p className='fs-1 fw-bold'>
-                Precio: $ { detalleDeLaPizza.price.toLocaleString('cl-CL') }
+                Precio: $ { detalleDelPlato.price.toLocaleString('cl-CL') }
               </p>
               <p>
-                <Button className='btn btn-success' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>
+                <Button className='btn btn-success' onClick={() => agregarAlCarrito(detalleDelPlato)}>
                   Agregar 🛒
                 </Button>
               </p>
               <p>
-                <Button className='btn btn-primary' onClick={() => navigatePizza('/')}>
+                <Button className='btn btn-primary' onClick={() => navigateRestaurante('/')}>
                   Volver a 🏡
                 </Button>
               </p>
@@ -68,4 +68,4 @@ const PizzaDetalle = () => {
   )
 }
 
-export default PizzaDetalle;
+export default PlatoDetalle;

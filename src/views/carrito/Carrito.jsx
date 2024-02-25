@@ -25,12 +25,12 @@ export default function Carrito() {
   }
 
   return(
-    <div className='mt-5 pt-5 estilo-carrito'>
+    <div className='mt-1 pt-1 estilo-carrito'>
     {carrito ? (
-      <Container style={{width: '100rem'}} className='justify-content-center'>
+      <Container style={{width: '100rem'}} className='bg-warning'>
         {carrito.length > 0 ?  (
-          <div className='text-light fs-5'>
-            <Row className='mb-5'>
+          <div className='text-bold fs-5'>
+            <Row className='mb-2'>
               <Col className='text-start fs-1 fw-bold'>Detalles del Pedido:</Col>
             </Row>
             {carrito.map((producto) => 
@@ -59,15 +59,15 @@ export default function Carrito() {
         ) : (
           <div>
             <div className='titular-carrito'>
-              <p className='badge text-light text-center fs-1'>Prestorante</p>
-              <p className='badge text-light text-center fs-5'>¡Tenemos lo mejor de la cuidad!</p>
+              <p className='badge text-bold fs-1'>Prestorante</p>
+              <p className='badge text-bold fs-5'>¡Tenemos lo mejor de la cuidad!</p>
             </div>
             <p><Button onClick={() => navigateRestaurante('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
           </div>
         )}
         <hr className='text-primary' />
         {carrito.length === 0 ? ('') : (
-          <Row className='text-light fw-bold fs-4'>
+          <Row className='text-bold fw-bold fs-4'>
             <Col className='no-ver'>
               Productos
             </Col>

@@ -1,16 +1,12 @@
-import { useContext } from 'react'
-
 import Button from 'react-bootstrap/Button'
 
-import { RestauranteContext } from '../../context/RestauranteContext'
-import { useNavigate } from 'react-router-dom'
+// import { RestauranteContext } from '../../context/RestauranteContext'
+// import { useNavigate } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-const Registro = () => {
-    const navigateRestaurante = useNavigate();
-    
+const Registro = () => {    
     return (
         <div>
             <h1>Por favor registrese y reciba nuestras mejores ofertas</h1>

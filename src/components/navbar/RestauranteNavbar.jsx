@@ -18,7 +18,7 @@ const RestauranteNavbar = () => {
       <nav className="d-flex align-items-center justify-content-between p-3 navbar fixed-top bg-black">
         <NavLink className={ setActiveClass } to="/">
           <img src='/icons8-pizza-65.png' style={{ width: '2rem' }} />
-          <span>Prestoran</span>
+          <span>Prestorante</span>
         </NavLink>
 
         <NavLink className={ setActiveClass } to="/login">

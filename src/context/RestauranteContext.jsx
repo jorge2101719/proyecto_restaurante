@@ -1,8 +1,8 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 export const RestauranteContext = createContext({});
 
-const RestauranteContextProvider = ({ children }) => {
+const RestauranteContextProvider = ( { children } ) => {
   const [platos, setPlatos] = useState([]); // maneja la petición a platos.json
   const [carrito, setCarrito] = useState([]); // maneja los estados del carrito
   const [total, setTotal] = useState(0); // da el valor a pagar
@@ -60,7 +60,7 @@ const RestauranteContextProvider = ({ children }) => {
   }
 
   return (
-    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
+    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }}>
       { children }
     </RestauranteContext.Provider>
   )

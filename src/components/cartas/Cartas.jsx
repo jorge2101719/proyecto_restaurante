@@ -19,7 +19,7 @@ const Cartas = ({ plato }) => {
   return (
     <div className='cartas'>
       {
-        <Card style={{width: '23rem'}} className="p-0">
+        <Card style={{width: '40rem'}} className="p-0">
           <Card.Img src={ plato.img } alt={ plato.name } />
           <Card.Body>
             <Card.Title className='fw-bold fs-4 text-center'> {plato.name.charAt(0).toUpperCase() + plato.name.slice(1)} </Card.Title>

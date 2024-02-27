@@ -13,7 +13,7 @@ const Footer = () => {
   }
 
   return (
-  <div className="bg-dark text-light p-3">
+  <div className="bg-dark text-light p-3 text-center">
     <p className='fs-3 fw-bold'>Prestorante</p>
     {total > 0 ? (
     <div>

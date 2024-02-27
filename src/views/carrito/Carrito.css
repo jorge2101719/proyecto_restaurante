@@ -1,10 +1,18 @@
-.estilo-carrito{
-  width: 90vw;
-  /* background-image: url('/poca-luz-02.jpeg'); 
-  /* background-repeat: no-repeat;
-  /* background-size: 75vw;
-  /* background-clip: border-box; */
+.carrito {
+  width: 110rem;
+  /* height: 25rem; */
+  background-image: url('/luces.jpg');
+  background-position: 0 50%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
 }
+
+
 
 .titular-carrito {
   display: flex;

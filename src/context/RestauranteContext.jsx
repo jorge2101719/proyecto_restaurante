@@ -2,11 +2,16 @@ import { createContext, useState, useEffect } from 'react';
 
 export const RestauranteContext = createContext({});
 
-const RestauranteContextProvider = ( { children } ) => {
+const RestauranteProvider = ( { children } ) => {
   const [platos, setPlatos] = useState([]); // maneja la petición a platos.json
   const [carrito, setCarrito] = useState([]); // maneja los estados del carrito
   const [total, setTotal] = useState(0); // da el valor a pagar
-  const [contador, setContador] = useState(0);
+  const [contador, setContador] = useState(0); // contador del total de productos
+  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState({
+  //   email: 'algo@correo.com',
+  //   password: '1234'
+  // });
 
   const getPlatos = async () => {
     const response = await fetch("/pizzas.json")
@@ -60,10 +65,10 @@ const RestauranteContextProvider = ( { children } ) => {
   }
 
   return (
-    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }}>
+    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar, user, setUser }}>
       { children }
     </RestauranteContext.Provider>
   )
 };
 
-export default RestauranteContextProvider;
+export default RestauranteProvider;

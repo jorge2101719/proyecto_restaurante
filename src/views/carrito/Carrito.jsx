@@ -25,66 +25,67 @@ export default function Carrito() {
   }
 
   return(
-    <div className='mt-1 pt-1 estilo-carrito'>
-    {carrito ? (
-      <Container style={{width: '100rem'}} className='bg-warning'>
-        {carrito.length > 0 ?  (
-          <div className='text-bold fs-5'>
-            <Row className='mb-2'>
-              <Col className='text-start fs-1 fw-bold'>Detalles del Pedido:</Col>
-            </Row>
-            {carrito.map((producto) => 
-              <Row key={producto.id}>
-                <Col xs={1} className='no-ver'>
-                  <img src={producto.img} alt={producto.name} style={{width: '4rem'}} />
-                </Col>
-                <Col xs={3} className='text-start'>
-                  {producto.name.charAt(0).toUpperCase() + producto.name.slice(1)}
-                </Col>
-                <Col xs={1} className='no-ver'>
-                  {producto.cantidad}
-                </Col>
-                <Col xs={1} className='no-ver text-end'>
-                  $ {producto.price.toLocaleString('cl-CL')}
-                </Col>
-                <Col xs={1} md={2} className='no-ver text-end'>
-                  $ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}
-                </Col>
-                <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
-                <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
+    <div className='m-5 pt-1 carrito'>
+
+      {carrito ? (
+        <Container>
+          {carrito.length > 0 ?  (
+            <div className='text-bold fs-5'>
+              <Row className='mb-2'>
+                <Col className='fs-1 fw-bold'>Este es el detalles de su pedido:</Col>
               </Row>
-            )
-            }
-          </div>
-        ) : (
-          <div>
-            <div className='titular-carrito'>
-              <p className='badge text-bold fs-1'>Prestorante</p>
-              <p className='badge text-bold fs-5'>¡Tenemos lo mejor de la cuidad!</p>
+              {carrito.map((producto) => 
+                <Row key={producto.id}>
+                  <Col xs={1} className='no-ver'>
+                    <img src={producto.img} alt={producto.name} style={{width: '4rem'}} />
+                  </Col>
+                  <Col xs={3} className='text-start'>
+                    {producto.name.charAt(0).toUpperCase() + producto.name.slice(1)}
+                  </Col>
+                  <Col xs={1} className='no-ver'>
+                    {producto.cantidad}
+                  </Col>
+                  <Col xs={1} className='no-ver text-end'>
+                    $ {producto.price.toLocaleString('cl-CL')}
+                  </Col>
+                  <Col xs={1} md={2} className='no-ver text-end'>
+                    $ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}
+                  </Col>
+                  <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
+                  <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
+                </Row>
+              )
+              }
             </div>
-            <p><Button onClick={() => navigateRestaurante('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
-          </div>
-        )}
-        <hr className='text-primary' />
-        {carrito.length === 0 ? ('') : (
-          <Row className='text-bold fw-bold fs-4'>
-            <Col className='no-ver'>
-              Productos
-            </Col>
-            <Col className='no-ver'>{contador}</Col>
-            <Col className='no-ver'>Total a pagar</Col>
-            <Col><span className='no-ver'>$</span> {total.toLocaleString('cl-CL')}</Col>
-            <Col>
-              <Button onClick={() => pagar()} className='btn btn-success text-light'>Pagar</Button>
-            </Col>
-            <Col>
-              <Button variant='danger' onClick={() => limpiarElCarrito()}>Limpiar</Button>
-            </Col>
-          </Row>
-          )
-        }
-      </Container>) : (undefined)
-    }
+          ) : (
+            <div>
+              <div className='titular-carrito'>
+                <p className='badge text-bold fs-1'>Prestorante</p>
+                <p className='badge text-bold fs-5'>Los mejores productos para usted</p>
+              </div>
+              <p><Button onClick={() => navigateRestaurante('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
+            </div>
+          )}
+          <hr className='text-primary' />
+          {carrito.length === 0 ? ('') : (
+            <Row className='text-bold fw-bold fs-4'>
+              <Col className='no-ver'>
+                Productos
+              </Col>
+              <Col className='no-ver'>{contador}</Col>
+              <Col className='no-ver'>Total a pagar</Col>
+              <Col><span className='no-ver'>$</span> {total.toLocaleString('cl-CL')}</Col>
+              <Col>
+                <Button onClick={() => pagar()} className='btn btn-success text-light'>Pagar</Button>
+              </Col>
+              <Col>
+                <Button variant='danger' onClick={() => limpiarElCarrito()}>Limpiar</Button>
+              </Col>
+            </Row>
+            )
+          }
+        </Container>) : (undefined)
+      }
     </div>
   )
 }

@@ -15,7 +15,7 @@ const RestauranteNavbar = () => {
 
   return (
     <div>
-      <nav className="d-flex align-items-center justify-content-between p-3 navbar fixed-top bg-black">
+      <nav className="nav">
         <NavLink className={ setActiveClass } to="/">
           <img src='/icons8-pizza-65.png' style={{ width: '2rem' }} />
           <span>Prestorante</span>
@@ -25,8 +25,8 @@ const RestauranteNavbar = () => {
           <span>Login</span>
         </NavLink>
 
-        <NavLink className={ setActiveClass } to="/registro">
-          Registrarse
+        <NavLink className={ setActiveClass } to="/admin">
+          Admin
         </NavLink>
 
         <NavLink className={ setActiveClass } to="/carrito">

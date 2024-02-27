@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './LoginStyle.css'
 
 const Login = () => {
     // Estados del formulario
@@ -24,26 +25,26 @@ const Login = () => {
     }
 
     return (
-        <>
+      <div className='estilo-login'>
         <h1>Ingrese sus datos</h1>
 
         <form onSubmit={validarRegistro}>
-            <div className='form-group'>
-                <label>Email</label>
-                <input
-                    className='form-control'
-                    name='correo'
-                    type='email'
-                    placeholder='ingrese su correo'
-                    onChange={ e => setCorreo(e.target.value) }
-                    value={correo}
-                />
-            </div>
-            <div className='form-group'>
-                <label>Password</label>
-                <input
-                    className='form-control'
-                    type='password'
+          <div className='form-group'>
+            <label>Email</label>
+              <input
+                className='form-control'
+                name='correo'
+                type='email'
+                placeholder='ingrese su correo'
+                onChange={ e => setCorreo(e.target.value) }
+                value={correo}
+              />
+          </div>
+          <div className='form-group'>
+            <label>Password</label>
+            <input
+              className='form-control'
+              type='password'
                     name='password'
                     placeholder='password'
                     onChange={e => setPassword(e.target.value)}
@@ -52,7 +53,7 @@ const Login = () => {
             </div>
             <button type='submit' className='btn btn-primary'>Enviar</button>
         </form>
-        </>
+      </div>
     )
 }
 

@@ -8,6 +8,8 @@ const RestauranteProvider = ( { children } ) => {
   const [total, setTotal] = useState(0); // da el valor a pagar
   const [contador, setContador] = useState(0); // contador del total de productos
   const [user, setUser] = useState(null)
+  // const [vistaHome, setVistaHome] = useState(true)
+  // const [vistaAdmin, setVistaAdmin] = useState(false)
   // const [user, setUser] = useState({
   //   email: 'algo@correo.com',
   //   password: '1234'

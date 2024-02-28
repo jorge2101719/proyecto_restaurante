@@ -28,7 +28,7 @@ export default function Carrito() {
     <div className='m-5 pt-1 carrito'>
 
       {carrito ? (
-        <Container>
+        <Container fluid>
           {carrito.length > 0 ?  (
             <div className='text-bold fs-5'>
               <Row className='mb-2'>

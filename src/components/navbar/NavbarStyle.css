@@ -24,3 +24,9 @@
   font-weight: bold;
 }
 
+@media screen and (max-width: 960px) {
+  .nav {
+    visibility: collapse;
+  }
+}
+

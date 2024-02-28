@@ -1,8 +1,15 @@
 import { useContext } from "react";
+// import { Container } from 'react-bootstrap'
+
+// import ScrollReveal from 'scrollreveal';
 
 import { RestauranteContext } from "../../context/RestauranteContext";
-import Cartas from '../../components/cartas/Cartas';
-import Buscando from '../../components/buscando/Buscando';
+
+import Cartas from '../cartas/Cartas'
+import Buscando from '..//buscando/Buscando';
+import Header from "../header/Header";
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // importación de Footer
 import Footer from '../../components/footer/Footer';
@@ -14,11 +21,8 @@ const RestauranteHome = () => {
 
   return (
     <div className="home">
-      <header className="banner">
-        <h1 className="fw-bold">Prestaurante</h1>
-        <p className="fw-bold fs-5">¡La mejor variedad para su paladar!</p>
-      </header>
-      <section className="cards">
+      <Header />
+      <section className="cartas">
         { platos ? platos.map((plato, indice) => <Cartas key={ indice } plato={ plato } />) : <Buscando />}
       </section>
       {/* inclusión de Footer */}

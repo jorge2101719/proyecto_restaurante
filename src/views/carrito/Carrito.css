@@ -1,10 +1,11 @@
 .carrito {
   width: 110rem;
   /* height: 25rem; */
-  background-image: url('/luces.jpg');
-  background-position: 0 50%;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  /* background-image: url('/luces.jpg'); */
+  background-color: gray;
+  /* background-position: 0 50%; */
+  /* background-size: 100% 100%; */
+  /* background-repeat: no-repeat; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -22,5 +23,6 @@
 @media (max-width: 1200px) {
   .no-ver {
     visibility: hidden;
+    width: auto;
   }
 }

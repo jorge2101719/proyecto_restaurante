@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './detalleDelPlato.css';
-import '../home/RestauranteHome';
+// import '../../components/home/RestauranteHome';
 
 const PlatoDetalle = () => {
   const { id } = useParams();

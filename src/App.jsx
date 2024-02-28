@@ -6,7 +6,7 @@ import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import RestauranteHome from './views/home/RestauranteHome';
+import RestauranteHome from './components/home/RestauranteHome';
 import Login from './views/rutas/Login.jsx';
 import Admin from './views/rutas/Admin.jsx';
 
@@ -16,12 +16,13 @@ import Carrito from './views/carrito/Carrito';
 import Error from './views/RestauranteError/Error';
 // import Footer from './components/footer/Footer'
 
+// import './views/home/Home.css'
 
 function App() {
   const { user } = useContext(RestauranteContext)
   
   return (
-    <div>
+    <div sm={3}>
       <RestauranteNavbar />
 
       <Routes>

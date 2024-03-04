@@ -46,5 +46,29 @@
     "ingredients": ["mozzarella", "pimientos", "pollo grillé", "orégano"],
     "name": "pollo picante",
     "price": 8500
+  },
+  {
+    "desc": "Variedad de verduras de estación",
+    "id": "P007",
+    "img": "https://www.recetasnestle.cl/sites/default/files/styles/crop_article_banner_desktop_nes/public/2022-09/plato-de-comida-con-verdura.webp?itok=DCad3AO5",
+    "ingredients": ["palta (aguacate)", "zanahorias", "palmitos", "brocolí", "rabanos", "pepinos"],
+    "name": "vegetariano",
+    "price": 7000
+  },
+  {
+    "desc": "Especial de carnes y longanizas",
+    "id": "P008",
+    "img": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/134E3/production/_105057097_a226d870-cc5f-4043-9f4b-d452b75cc280.jpg",
+    "ingredients": ["vacuno", "longanizas", "huevo frito", "arroz", "palta (aguacate)"],
+    "name": "carnívoro",
+    "price": 12000
+  },
+  {
+    "desc": "",
+    "id": "P009",
+    "img": "https://espanol.kaiserpermanente.org/content/dam/kp/chub/images/diabetes/es/plato-de-pollo-con-ensalada-y-arroz-l-dt.jpg",
+    "ingredients": ["pollo", "arroz", "tomates cherry", "albaca"],
+    "name": "pollo a la plancha",
+    "price": 10000
   }
 ]

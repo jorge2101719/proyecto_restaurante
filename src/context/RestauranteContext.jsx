@@ -7,7 +7,7 @@ const RestauranteProvider = ( { children } ) => {
   const [carrito, setCarrito] = useState([]); // maneja los estados del carrito
   const [total, setTotal] = useState(0); // da el valor a pagar
   const [contador, setContador] = useState(0); // contador del total de productos
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
   // const [vistaHome, setVistaHome] = useState(true)
   // const [vistaAdmin, setVistaAdmin] = useState(false)
   // const [user, setUser] = useState({
@@ -66,8 +66,14 @@ const RestauranteProvider = ( { children } ) => {
     alert('Gracias por su compra')
   }
 
+  // const persona = {
+  //   email: 'algo@correo.com',
+  //   password: '1234'
+  // }
+  // localStorage.setItem('persona', JSON.stringify(persona))
+
   return (
-    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar, user, setUser }}>
+    <RestauranteContext.Provider value={{ platos, carrito, total, contador, getPlatos, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }}>
       { children }
     </RestauranteContext.Provider>
   )

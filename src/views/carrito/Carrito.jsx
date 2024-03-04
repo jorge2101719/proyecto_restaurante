@@ -1,7 +1,7 @@
-import Container from 'react-bootstrap/Container'
+// import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +14,7 @@ import { useContext } from 'react';
 export default function Carrito() {
   const { carrito, agregarAlCarrito, quitarDelCarrito, total, contador, limpiarElCarrito, pagar } = useContext(RestauranteContext);
 
-  const navigateRestaurante = useNavigate()
+  const navigate = useNavigate()
 
   const incrementar = (plato) => {
     agregarAlCarrito(plato);
@@ -25,10 +25,9 @@ export default function Carrito() {
   }
 
   return(
-    <div className='m-5 pt-1 carrito'>
-
+    <div className='container-fluid'>
       {carrito ? (
-        <Container fluid>
+        <div className='container-fluid gradiente-carrito'>
           {carrito.length > 0 ?  (
             <div className='text-bold fs-5'>
               <Row className='mb-2'>
@@ -51,19 +50,19 @@ export default function Carrito() {
                   <Col xs={1} md={2} className='no-ver text-end'>
                     $ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}
                   </Col>
-                  <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
-                  <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
+                  <Col><button onClick={() => incrementar(producto)} className='btn btn-success'> + </button></Col>
+                  <Col><button onClick={() => decrementar(producto)} className='btn btn-danger'> - </button></Col>
                 </Row>
               )
               }
             </div>
           ) : (
-            <div>
+            <div className='carrito'>
               <div className='titular-carrito'>
                 <p className='badge text-bold fs-1'>Prestorante</p>
                 <p className='badge text-bold fs-5'>Los mejores productos para usted</p>
               </div>
-              <p><Button onClick={() => navigateRestaurante('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
+              <button onClick={() => navigate('/')} className='btn btn-primary fs-4 btn-volver'>Volver a 🏡</button>
             </div>
           )}
           <hr className='text-primary' />
@@ -76,15 +75,15 @@ export default function Carrito() {
               <Col className='no-ver'>Total a pagar</Col>
               <Col><span className='no-ver'>$</span> {total.toLocaleString('cl-CL')}</Col>
               <Col>
-                <Button onClick={() => pagar()} className='btn btn-success text-light'>Pagar</Button>
+                <button onClick={() => pagar()} className='btn btn-success text-light'>Pagar</button>
               </Col>
               <Col>
-                <Button variant='danger' onClick={() => limpiarElCarrito()}>Limpiar</Button>
+                <button className='btn btn-danger' onClick={() => limpiarElCarrito()}>Limpiar</button>
               </Col>
             </Row>
             )
           }
-        </Container>) : (undefined)
+        </div>) : (undefined)
       }
     </div>
   )

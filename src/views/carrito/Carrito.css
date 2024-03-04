@@ -1,18 +1,22 @@
 .carrito {
-  width: 110rem;
-  /* height: 25rem; */
-  /* background-image: url('/luces.jpg'); */
-  background-color: gray;
-  /* background-position: 0 50%; */
-  /* background-size: 100% 100%; */
-  /* background-repeat: no-repeat; */
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10% 0;
+  /* background-color: darkgray; */
   color: white;
+  border-radius: 1rem;
 }
 
+.gradiente-carrito{
+  background: linear-gradient( #00dce7, #089ff7, #0381e2 );
+}
+
+.btn-volver {
+  width: 10%;
+}
 
 
 .titular-carrito {
@@ -26,3 +30,4 @@
     width: auto;
   }
 }
+

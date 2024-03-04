@@ -21,7 +21,7 @@ const Cartas = ({ plato }) => {
   return (
     <div>
       {
-        <div className="card" style={{'max-width': '30rem'}}>
+        <div className="card" style={{width: '25rem'}}>
           <img src={ plato.img } alt={ plato.name } className='card-img-top' />
           <div className='card-body'>
               <h1 className='fw-bold text-center card-title'>
@@ -31,7 +31,8 @@ const Cartas = ({ plato }) => {
                 <strong className='card-title fs-4'>Ingredientes:</strong>
               </h5>
               { plato.ingredients.map( (ingrediente, indice) => <div key={indice} className='text-start'>
-                <img src='/pizza.png' alt='pizza' style={{width: '7%'}} className='mx-2' /> {ingrediente}
+                {/* <img src='/pizza.png' alt='pizza' style={{width: '7%'}} className='mx-2' />  */}
+                {ingrediente}
               </div> ) }
               <div className='fw-bold fs-4 card-text'>
                 Precio: $ {plato.price.toLocaleString('cl-CL')}

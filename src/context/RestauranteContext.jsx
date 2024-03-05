@@ -7,7 +7,7 @@ const RestauranteProvider = ( { children } ) => {
   const [carrito, setCarrito] = useState([]); // maneja los estados del carrito
   const [total, setTotal] = useState(0); // da el valor a pagar
   const [contador, setContador] = useState(0); // contador del total de productos
-  // const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(false)
   // const [vistaHome, setVistaHome] = useState(true)
   // const [vistaAdmin, setVistaAdmin] = useState(false)
   // const [user, setUser] = useState({
@@ -18,7 +18,7 @@ const RestauranteProvider = ( { children } ) => {
   const getPlatos = async () => {
     const response = await fetch("/pizzas.json")
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     setPlatos(data);
   };
 
@@ -68,7 +68,9 @@ const RestauranteProvider = ( { children } ) => {
 
   // const persona = {
   //   email: 'algo@correo.com',
-  //   password: '1234'
+  //   password: '1234'      {/* </RestauranteProvider> */}
+    {/* </BrowserRouter> */}
+
   // }
   // localStorage.setItem('persona', JSON.stringify(persona))
 

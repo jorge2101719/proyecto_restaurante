@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 // import { Navbar } from 'react-bootstrap';
 
@@ -7,45 +7,50 @@ import '../../App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavbarStyle.css'
 
-import { RestauranteContext } from '../../context/RestauranteContext';
-import { useContext } from 'react';
+// import { RestauranteContext } from '../../context/RestauranteContext';
+// import { useContext } from 'react';
 
-const RestauranteNavbar = ({ isLogin, setIsLogin }) => {
-  const { total, contador } = useContext(RestauranteContext);
+const RestauranteNavbar = () => {
+  const navigate = useNavigate();
+  // const { user, setUser } = useContext(RestauranteContext);
+
+
+  const isLogin = (user) => {
+    if (!user) {
+      return (
+        <div>
+          {/* <NavLink to='/registrarse' className='btn m-1 setActiveClass'>Registrarse</NavLink> */}
+          <NavLink to='/login' className='setActiveClass m-5'>Login</NavLink>
+        </div>
+      )
+    }
+
+    // navigate('/admin')
+
+    // return (
+    //   <div>
+    //     <NavLink to='/admin'></NavLink>
+    //   </div>
+    // )
+  }
 
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-actve");
 
   return (
     <div className='container-fluid sticky-top'>
-      <Navbar className="justify-content-end mi-nav" sticky='top' expand='xl'>
-        {!isLogin ? (
-          <div className='container-fluid'>
-            <NavLink className={setActiveClass} to="/">
-              {/* <img src='/icons8-pizza-65.png' style={{ width: '2rem' }} /> */}
-              <span>Prestorante</span>
-            </NavLink>
-
-            <NavLink className={setActiveClass} to="/carrito">
-              {/* <img src='/carrito-de-compras.png' style={{width: '2rem'}} /> */}
-              {/* <span className='totalCompra'> Total $ {total.toLocaleString('cl-CL')}</span> */}
-              <span className='totalCompra'> Total de productos: {contador} </span>
-            </NavLink>
-
-            <NavLink className={setActiveClass} to="/login">
-              <span>Login</span>
-            </NavLink>
-          </div>
-        ) : (
-          <div className='container-fluid'>
-                <NavLink className={setActiveClass} to='/'>
-                  <span>Prestorante</span>
-                </NavLink>
-
-                <NavLink className={setActiveClass} to="/login">
-                  <span>Login</span>
-                </NavLink>
-          </div>
-        )}
+      <Navbar className="mi-nav" sticky='top' expand='xl'>
+        <span>
+          <NavLink to='/'>
+            <img src="https://images.ecestaticos.com/h53ifQ5cwmB5AbJT5MR7yTZ0_DA=/125x0:2144x1513/996x747/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F3b8%2F281%2Fef2%2F3b8281ef2d44ef19e6a613d298ccf635.jpg" style={{width: '6%'}} alt="logo" />
+          </NavLink>
+        </span>
+        <div className='mi-nav'>
+          <span>
+            <NavLink to='/' className='setActiveClass, m-5'>Inicio</NavLink>
+            <NavLink to='/carrito' className='m-5'> Detalle </NavLink>
+          </span>
+          {isLogin()}
+        </div>
       </Navbar>
     </div>
   )

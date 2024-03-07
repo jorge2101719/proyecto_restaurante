@@ -8,7 +8,7 @@ import { RestauranteContext } from "../../context/RestauranteContext";
 import Cartas from '../cartas/Cartas'
 import Buscando from '..//buscando/Buscando';
 import Header from "../header/Header";
-import Carrusel from "../carrusel/Carrusel";
+// import Carrusel from "../carrusel/Carrusel";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -24,7 +24,7 @@ const RestauranteHome = () => {
   return (
     <div className="home">
       <Header />
-      <Carrusel />
+      {/* <Carrusel /> */}
       <section className="cartas">
         { platos ? platos.map((plato, indice) => <Cartas key={ indice } plato={ plato } />) : <Buscando />}
       </section>

@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 // import { RestauranteContext } from '../context/RestauranteContext';
 // import { useContext } from 'react'
 
+// import HomeAdmin from '../components/home/HomeAdmin';
+// const form = useRef();
+
 const initialForm = {correo: 'algo@correo.com', password: '1234'}
 
 const Login = () => {
@@ -25,15 +28,17 @@ const Login = () => {
 
     if (correo === '' || password === '') {
         setError(true)
-        setUser(false)
+        setUser(!user)
         return
     }
 
     setCorreo('')
     setPassword('')
     setError(false);
-    setUser(true);
+    setUser(!user);
+    // form.current.reset();
     navigate('/admin');
+
     // console.log('el valor de user es', user)
 
     return
@@ -45,11 +50,12 @@ const Login = () => {
     <form
       className='formulario'
       onSubmit={ handleSubmit }
+      // ref = { Form }
     >
       <label htmlFor="email">Correo</label>
       <input
         type="email"
-        value={correo}
+        // value={correo}
         onChange={(e) => setCorreo(e.target.value)}
         id="email"
       />
@@ -58,7 +64,7 @@ const Login = () => {
       <label htmlFor="password">Password</label>
       <input
         type="password"
-        value={password}
+        // value={password}
         onChange={(e) => setPassword(e.target.value)}
         id="password"
       />
@@ -67,6 +73,8 @@ const Login = () => {
       <button type='submit' className='btn btn-primary'>Iniciar</button>
     </form>
     { error && <p id='login-error'>Todos los campos son obligatorios</p> }
+    {/* {!user ? <HomeAdmin /> : <Login />} */}
+    {/* {user ? <HomeAdmin /> : null} */}
   </div>
 )
 }    

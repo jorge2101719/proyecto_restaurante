@@ -16,7 +16,7 @@ const RestauranteProvider = ( { children } ) => {
   // });
 
   const getPlatos = async () => {
-    const response = await fetch("/pizzas.json")
+    const response = await fetch("/platos.json")
     const data = await response.json()
     // console.log(data)
     setPlatos(data);
@@ -63,7 +63,7 @@ const RestauranteProvider = ( { children } ) => {
     setCarrito([]);
     setTotal(0);
     setContador(0);
-    alert('Gracias por su compra')
+    window.alert('Gracias por su compra')
   }
 
   // const persona = {

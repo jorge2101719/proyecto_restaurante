@@ -4,7 +4,7 @@ import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 
 const PaginaAdmin = () => {
   const { platos, agregarPlato, eliminarPlato } = useContext(RestauranteContext);
- 
+
   const handleAgregarPlato = () => {
     // Lógica para agregar un nuevo plato
     const nuevoPlato = { id: Math.random().toString(36).substring(7), nombre: "Nuevo Plato", descripcion: "Descripción del nuevo plato" };
